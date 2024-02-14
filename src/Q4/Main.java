@@ -40,7 +40,15 @@ public class Main {
 		app.addFolder(models);
 		app.addFolder(views);
 
-		System.out.println("=======File Structure=======\n['+' are folders; '-' are files]\n");
+		System.out.println("======= File Structure =======\n['+' are folders; '-' are files]\n");
+		php_demo1.printSubFolders();
+
+		System.out.print("======= Deleting Folder: app =======");
+		source_files.deleteFolder(app);		
+		php_demo1.printSubFolders();
+
+		System.out.print("======= Deleting Folder: public =======");
+		source_files.deleteFolder(publicFolder);
 		php_demo1.printSubFolders();
 
 		// php_demo1.print();

@@ -1,7 +1,6 @@
 package Q4;
 
 import java.util.LinkedList;
-// import java.util.List;
 
 public class Folder {
 	private String name;
@@ -12,6 +11,11 @@ public class Folder {
 		this.name = name;
 		this.subFolders = new LinkedList<>();
 		this.files = new LinkedList<>();
+	}
+
+	public void deleteFolder(Folder subFolder) {
+		subFolder.getSubFolders().clear();
+		this.getSubFolders().remove(subFolder);
 	}
 
 	public void addFolder(Folder subFolder) {
@@ -47,10 +51,10 @@ public class Folder {
 	}
 
 	public void printSubFolders() {
-		System.out.println("Reading folder: " + this.getName());
+		System.out.println("\nReading folder: " + this.getName());
 
 		for (Folder folder : getSubFolders()) {
-			System.out.println("\t" + folder.toString());
+			System.out.println(folder);
 			if (folder.getSubFolders().size() > 0) {
 				folder.printSubFolders();
 			}
@@ -69,7 +73,6 @@ public class Folder {
 
 	@Override
 	public String toString() {
-
-		return "+" + this.getName();
+		return "\t+" + this.getName();
 	}
 }
